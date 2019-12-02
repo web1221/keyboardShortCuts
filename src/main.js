@@ -2,7 +2,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import './ace-builds/src-noconflict/ace.js';
+import './src-noconflict/ace.js';
 
 
 
