@@ -24,7 +24,7 @@ document.addEventListener("keydown", function(event) {
   }
   let collectionArrayString = collectionArray.toString();
   let answerArrayString = answerArray.toString();
-  // console.log(collectionArray);
+  console.log(collectionArray);
   // console.log(answerArrayString);
   if (collectionArrayString === answerArrayString) {
     console.log("success!");
