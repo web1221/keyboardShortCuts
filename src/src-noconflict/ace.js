@@ -12362,7 +12362,7 @@ exports.commands = [{
 }, {
     name: "findnext",
     description: "Find next",
-    bindKey: bindKey("Ctrl-K", "Command-G"),
+    bindKey: bindKey("Ctrl-K", "Command-D"),
     exec: function(editor) { editor.findNext(); },
     multiSelectAction: "forEach",
     scrollIntoView: "center",
@@ -12713,7 +12713,7 @@ exports.commands = [{
 }, {
     name: "removeline",
     description: "Remove line",
-    bindKey: bindKey("Ctrl-D", "Command-D"),
+    bindKey: bindKey("Ctrl-D", "Command-Shift-K"),
     exec: function(editor) { editor.removeLines(); },
     scrollIntoView: "cursor",
     multiSelectAction: "forEachLine"
@@ -20067,14 +20067,14 @@ exports.defaultCommands = [{
     name: "addCursorAbove",
     description: "Add cursor above",
     exec: function(editor) { editor.selectMoreLines(-1); },
-    bindKey: {win: "Ctrl-Alt-Up", mac: "Ctrl-Alt-Up"},
+    bindKey: {win: "Ctrl-Shift-Up", mac: "Ctrl-Shift-Up"},
     scrollIntoView: "cursor",
     readOnly: true
 }, {
     name: "addCursorBelow",
     description: "Add cursor below",
     exec: function(editor) { editor.selectMoreLines(1); },
-    bindKey: {win: "Ctrl-Alt-Down", mac: "Ctrl-Alt-Down"},
+    bindKey: {win: "Ctrl-Shift-Down", mac: "Ctrl-Shift-Down"},
     scrollIntoView: "cursor",
     readOnly: true
 }, {

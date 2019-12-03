@@ -45,7 +45,7 @@ function moveBySubWords(editor, direction, extend) {
         editor.selection.moveCursorTo(row, column);
     else
         editor.selection.moveTo(row, column);
-    
+
     function getType(x) {
         if (!x) return "-";
         if (/\s/.test(x)) return "s";
@@ -57,7 +57,7 @@ function moveBySubWords(editor, direction, extend) {
 }
 
 exports.handler = new HashHandler();
- 
+
 exports.handler.addCommands([{
     name: "find_all_under",
     exec: function(editor) {
@@ -197,7 +197,7 @@ exports.handler.addCommands([{
 }, {
     bindKey: { mac: "cmd-l", win: "ctrl-l" },
     name: "expandtoline"
-}, 
+},
 {
     bindKey: {mac: "cmd-shift-a", win: "ctrl-shift-a"},
     name: "expandSelection",
@@ -236,7 +236,7 @@ exports.handler.addCommands([{
 }, {
     bindKey: { mac: "cmd-k cmd-d", win: "ctrl-k ctrl-d" },
     name: "find_under_expand_skip"
-}, 
+},
 {
     bindKey: { mac: "cmd-alt-[", win: "ctrl-shift-[" },
     name: "toggleFoldWidget"
@@ -263,7 +263,7 @@ exports.handler.addCommands([{
 }, {
     bindKey: { win: "ctrl-shift-right", mac: "alt-shift-right" },
     name: "selectToWordEndRight"
-}, 
+},
 {
     bindKey: {mac: "ctrl-alt-shift-right|ctrl-shift-right", win: "alt-shift-right"},
     name: "selectSubWordRight"
@@ -276,12 +276,12 @@ exports.handler.addCommands([{
 }, {
     bindKey: {mac: "ctrl-alt-left|ctrl-left", win: "alt-left"},
     name: "moveSubWordLeft"
-}, 
+},
 {
     bindKey: { mac: "ctrl-m", win: "ctrl-m" },
     name: "jumptomatching",
     args: { to: "brackets" }
-}, 
+},
 {
     bindKey: { mac: "ctrl-f6", win: "ctrl-f6" },
     name: "goToNextError"
@@ -293,18 +293,18 @@ exports.handler.addCommands([{
 {
     bindKey: { mac: "ctrl-o" },
     name: "splitline"
-}, 
+},
 {
     bindKey: {mac: "ctrl-shift-w", win: "alt-shift-w"},
     name: "surrowndWithTag"
 },{
     bindKey: {mac: "cmd-alt-.", win: "alt-."},
     name: "close_tag"
-}, 
+},
 {
     bindKey: { mac: "cmd-j", win: "ctrl-j" },
     name: "joinlines"
-}, 
+},
 
 {
     bindKey: {mac: "ctrl--", win: "alt--"},
@@ -312,7 +312,7 @@ exports.handler.addCommands([{
 }, {
     bindKey: {mac: "ctrl-shift--", win: "alt-shift--"},
     name: "jumpForward"
-}, 
+},
 
 {
     bindKey: { mac: "cmd-k cmd-l", win: "ctrl-k ctrl-l" },
@@ -320,7 +320,7 @@ exports.handler.addCommands([{
 }, {
     bindKey: { mac: "cmd-k cmd-u", win: "ctrl-k ctrl-u" },
     name: "touppercase"
-}, 
+},
 
 {
     bindKey: {mac: "cmd-shift-v", win: "ctrl-shift-v"},
@@ -328,7 +328,7 @@ exports.handler.addCommands([{
 }, {
     bindKey: {mac: "cmd-k cmd-v|cmd-alt-v", win: "ctrl-k ctrl-v"},
     name: "paste_from_history"
-}, 
+},
 
 {
     bindKey: { mac: "cmd-shift-enter", win: "ctrl-shift-enter" },
@@ -360,12 +360,12 @@ exports.handler.addCommands([{
 {
     bindKey: { mac: "cmd-k cmd-c|ctrl-l", win: "ctrl-k ctrl-c" },
     name: "centerselection"
-}, 
+},
 
 {
     bindKey: { mac: "f5", win: "f9" },
     name: "sortlines"
-}, 
+},
 {
     bindKey: {mac: "ctrl-f5", win: "ctrl-f9"},
     name: "sortlines",
@@ -401,7 +401,7 @@ exports.handler.addCommands([{
 }, {
     bindKey: { linux: "ctrl-alt-shift-q", mac: "ctrl-shift-q", win: "ctrl-shift-q" },
     name: "replaymacro"
-}, 
+},
 
 {
     bindKey: { mac: "ctrl-t", win: "ctrl-t" },
@@ -422,4 +422,3 @@ exports.handler.addCommands([{
                         }
                     });
                 })();
-            
