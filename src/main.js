@@ -6,6 +6,7 @@ import './src-noconflict/ace.js';
 import './src-noconflict/theme-monokai.js';
 import './src-noconflict/mode-javascript.js';
 import './src-noconflict/worker-javascript.js';
+import './src-noconflict/lib/es5-shim.js'
 
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
@@ -14,11 +15,11 @@ editor.session.setMode("ace/mode/javascript");
 let collectionArray = [];
 
 document.addEventListener("keydown", function(event) {
-console.log(event.which);
-console.log(event.repeat);
-if (event.repeat === false) {
+  console.log(event.which);
+  console.log(event.repeat);
+  if (event.repeat === false) {
     collectionArray.push(event.which);
-}
+  }
 
-console.log(collectionArray);
+  console.log(collectionArray);
 });

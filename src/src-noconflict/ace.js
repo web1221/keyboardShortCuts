@@ -12292,6 +12292,22 @@ exports.commands = [{
     exec: function(editor) { editor.selectAll(); },
     readOnly: true
 }, {
+}, {
+  //Try to find function to match ALL words
+    name: "selectMatchingWords",
+    description: "Select all matching words",
+    bindKey: bindKey("Alt-Ctrl-G", "Alt-Ctrl-G"),
+    exec: function(editor) { editor.getValue().match(editor.$search.$options.re) },
+    readOnly: true
+}, {
+}, {
+  // Try to Use a Matching Bracket function to find the matching Bracket to the code. Used in Atom with control-M, but seems to not be used in ACE.
+    name: "matchBrackets",
+    description: "Finds Matching Bracket",
+    bindKey: bindKey("Ctrl-M", "Ctrl-M"),
+    exec: function(editor) { editor.BracketMatch(); },
+    readOnly: true
+}, {
     name: "centerselection",
     description: "Center selection",
     bindKey: bindKey(null, "Ctrl-L"),
@@ -12360,17 +12376,18 @@ exports.commands = [{
     scrollIntoView: "center",
     readOnly: true
 }, {
+    //Trying to find next matching and highlight it without unmatching previous ones. 
     name: "findnext",
     description: "Find next",
     bindKey: bindKey("Ctrl-K", "Command-D"),
-    exec: function(editor) { editor.findNext(); },
+    exec: function(editor) { editor.getSelectedText(); editor.findNext(); },
     multiSelectAction: "forEach",
     scrollIntoView: "center",
     readOnly: true
 }, {
     name: "findprevious",
     description: "Find previous",
-    bindKey: bindKey("Ctrl-Shift-K", "Command-Shift-G"),
+    bindKey: bindKey("Ctrl-Shift-K", "Command-U"),
     exec: function(editor) { editor.findPrevious(); },
     multiSelectAction: "forEach",
     scrollIntoView: "center",
@@ -12624,6 +12641,7 @@ exports.commands = [{
     exec: function(e) { e.renderer.scrollBy(0, 2 * e.renderer.layerConfig.lineHeight); },
     readOnly: true
 }, {
+  // Atom has a select line option. It seems that ACE uses start to End or end to Start. If key-binding is the same it seems that select to end takes lead.
     name: "selectlinestart",
     description: "Select line start",
     bindKey: "Shift-Home",
@@ -12713,7 +12731,7 @@ exports.commands = [{
 }, {
     name: "removeline",
     description: "Remove line",
-    bindKey: bindKey("Ctrl-D", "Command-Shift-K"),
+    bindKey: bindKey("Ctrl-D", "Ctrl-Shift-K"),
     exec: function(editor) { editor.removeLines(); },
     scrollIntoView: "cursor",
     multiSelectAction: "forEachLine"
@@ -12785,7 +12803,7 @@ exports.commands = [{
 }, {
     name: "movelinesup",
     description: "Move lines up",
-    bindKey: bindKey("Alt-Up", "Option-Up"),
+    bindKey: bindKey("Alt-Up", "Ctrl-Command-Up"),
     exec: function(editor) { editor.moveLinesUp(); },
     scrollIntoView: "cursor"
 }, {
@@ -12841,7 +12859,7 @@ exports.commands = [{
     name: "removetolineend",
     description: "Remove to line end",
     bindKey: bindKey("Alt-Delete", "Ctrl-K|Command-Delete"),
-    exec: function(editor) { editor.removeToLineEnd(); },
+    exec: function(editor) { editor.removeToLineEnd();  },
     multiSelectAction: "forEach",
     scrollIntoView: "cursor"
 }, {
@@ -12937,6 +12955,7 @@ exports.commands = [{
     multiSelectAction: function(editor) {editor.transposeSelections(1); },
     scrollIntoView: "cursor"
 }, {
+    // For Atom Upper/Lower short cut is "Command-K-U" & "Command-K-L" but ACE says that K is invaild Modifier.
     name: "touppercase",
     description: "To uppercase",
     bindKey: bindKey("Ctrl-U", "Ctrl-U"),
@@ -14054,7 +14073,7 @@ Editor.$uid = 0;
     };
     this.removeToLineEnd = function() {
         if (this.selection.isEmpty())
-            this.selection.selectLineEnd();
+          this.selection.selectLineEnd();
 
         var range = this.getSelectionRange();
         if (range.start.column == range.end.column && range.start.row == range.end.row) {
