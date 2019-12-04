@@ -1,8 +1,9 @@
 export class Game{
-  construtor(score){
+  construtor(collectionArray){
     this.score = 0;
     this.starterScore = 200;
-    this.metaKeys = {
+    this.collectionArray = collectionArray;
+    this.keys = {
       ctrl: 17,
       option: 18,
       command: 93 || 91,
@@ -18,6 +19,7 @@ export class Game{
       v: 86,
       x: 88,
     }
+  //Might want to think about making this into functions instead of storing more objects in construtor.
     this.gameControlObject = {
       copy: [91, 67],
       paste: [91, 83],
@@ -29,17 +31,31 @@ export class Game{
       save: [93, 83],
       saveAs: [93, 16, 83],
       find: [93, 70]
-    } ;
-    this.answerArray = [];
+    };
   }
-  doCopy(){
-    set interval
-    this.starterScore --
-    doneCopy()
+  copyCountDown(){
+    let copyCountDownInterval = setInterval(()=> {
+      this.starterScore--;
+      this.correctCopyAnswer(countDownInterval);
+    }, 10);
   }
-  doneCopy(){
-    if(this.metaKeys.command && this.metaKeys.c){
-      clear
+  //
+  correctCopyAnswer(interval){
+    this.copyCode = [this.key.command, this.keys.c];
+    if(this.copyCode.includes(17) && (this.copyCode.includes(93) || this.copyCode.includes(91))){
+      clearInterval(interval)
+      resetStarterScore();
+      addPoints()
     }
   }
+  addPoints(){
+    // add to the end of a correct function
+    return this.score += this.starterScore;
+  }
+
+  resetStarterScore(){
+    //reest the starter score
+    this.startScore = 200;
+  }
+
 }
