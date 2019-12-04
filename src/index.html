@@ -1,18 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>ACE in Action</title>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+  <title>ACE in Action</title>
 </head>
 <body>
-  <div class="container">
+  <!-- container with html editor and text entry -->
+  <div class="all">
+
+    <div class="container">
+      <h1><span class="red">Dev</span><span class="yellow">Shortcuts</span></h1>
+      <div id="editor">
+        <p>function foo(items) {
+          var x = "All this is syntax highlighted";
+          return x;
+        }</p>
+      </div>
+
+      <form>
+        <div class="">
+
+          <textarea placeholder="Text entry here..."id="entry" rows="3"></textarea>
+        </div>
+      </form>
 
 
-<div id="editor">
-  <p>function foo(items) {
-    var x = "All this is syntax highlighted";
-    return x;
-}</p>
+
+    </div>
+    <!-- end container  -->
+
+
+
+
+    <div id="talkbubble">
+      <form class="" action="index.html" method="post">
+        <button form="allCollapse"type="button" class="collapsible">Shortcuts</button>
+        <div class="content">
+      <div class="card">
+
+
+        <button type="button" class="collapsible">Atom</button>
+        <div class="content">
+          <label for="Atom">Shortcuts
+            <select class="form-control">
+              <option value="">Menu</option>
+              <option value="2">Move current highlighted line up/down | Ctrl + Alt + (up/dpwn)</option>
+              <option value="4">Select next matching X | Alt + D</option>
+              <option value="6">Select all matching | Alt + Ctrl + G</option>
+              <option value="8">Shake selected | Alt + Ctrl + ^ </option>
+            </select>
+          </label>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+
+      <button type="button" class="collapsible">Chrome</button>
+      <div class="content">
+        <label for="Atom">Chrome
+          <select class="form-control">
+            <option value="">Menu</option>
+            <option value="2">Clear Console Log | Alt + K</option>
+            <option value="4">Open inspector | Alt + Windows + C</option>
+            <option value="6">New Tab | Alt + T</option>
+            <option value="8">New Window | Alt + N</option>
+          </select>
+        </label>
+      </div>
+
+      </div>
+
+      <div class="card">
+
+
+     <button type="button" class="collapsible">Atom</button>
+     <div class="content">
+        <label for="Atom">General
+          <select class="form-control" name="">
+            <option value="">Menu</option>
+            <option value="2">Copy | Alt + C</option>
+            <option value="4">Paste | Alt - V</option>
+            <option value="6">Select All | Alt + Shift + V</option>
+            <option value="8">Open Settings | Alt + Comma</option>
+          </select>
+        </label>
+      </div>
+    </form>
+
+
+    </div>
+  </div>
+  </div>
 </div>
-</div>
+
+
+
+
+
+
+
 </body>
 </html>
