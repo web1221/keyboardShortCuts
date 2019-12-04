@@ -19,7 +19,7 @@ export class Game{
       v: 86,
       x: 88,
     }
-  //Might want to think about making this into functions instead of storing more objects in construtor.
+    //Might want to think about making this into functions instead of storing more objects in construtor.
     this.gameControlObject = {
       copy: [91, 67],
       paste: [91, 83],
@@ -43,6 +43,62 @@ export class Game{
   correctCopyAnswer(interval){
     this.copyCode = [this.key.command, this.keys.c];
     if(this.copyCode.includes(17) && (this.copyCode.includes(93) || this.copyCode.includes(91))){
+      clearInterval(interval)
+      resetStarterScore();
+      addPoints()
+    }
+  }
+  correctPasteAnswer(interval){
+    this.pasteCode = [this.key.command, this.keys.v];
+    if(this.pasteCode.includes(86) && (this.pasteCode.includes(93) || this.pasteCode.includes(91))){
+      clearInterval(interval)
+      resetStarterScore();
+      addPoints()
+    }
+  }
+  correctPasteNoFormatAnswer(interval){
+    this.pasteNoFormatCode = [this.key.command, this.keys.v, this.keys.shift];
+    if(this.pasteNoFormatCode.includes(86) && this.pasteNoFormatCode.includes(16) && (this.pasteNoFormatCode.includes(93) || this.pasteNoFormatCode.includes(91))){
+      clearInterval(interval)
+      resetStarterScore();
+      addPoints()
+    }
+  }
+  correctSelectAllAnswer(interval){
+    this.selectAllCode = [this.key.command, this.keys.a];
+    if(this.selectAllCode.includes(65) && (this.selectAllCode.includes(93) || this.selectAllCode.includes(91))){
+      clearInterval(interval)
+      resetStarterScore();
+      addPoints()
+    }
+  }
+  correctCutAnswer(interval){
+    this.cutCode = [this.key.command, this.keys.x];
+    if(this.cutCode.includes(88) && (this.cutCode.includes(93) || this.cutCode.includes(91))){
+      clearInterval(interval)
+      resetStarterScore();
+      addPoints()
+    }
+  }
+  correctSaveAnswer(interval){
+    this.saveCode = [this.key.command, this.keys.s];
+    if(this.saveCode.includes(83) && (this.saveCode.includes(93) || this.saveCode.includes(91))){
+      clearInterval(interval)
+      resetStarterScore();
+      addPoints()
+    }
+  }
+  correctSaveAsAnswer(interval){
+    this.saveAsCode = [this.key.command, this.keys.s, this.key.shift];
+    if(this.saveAsCode.includes(83) && this.saveAsCode.includes(16) && (this.saveAsCode.includes(93) || this.saveAsCode.includes(91))){
+      clearInterval(interval)
+      resetStarterScore();
+      addPoints()
+    }
+  }
+  correctFindAnswer(interval){
+    this.findCode = [this.key.command, this.keys.f];
+    if(this.fidnCode.includes(70) && (this.findCode.includes(93) || this.findCode.includes(91))){
       clearInterval(interval)
       resetStarterScore();
       addPoints()
