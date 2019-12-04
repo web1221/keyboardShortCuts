@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 ace.config.setModuleUrl('ace/ext/beautify', require('file-loader!./src-noconflict/ext-beautify.js'))
 ace.config.setModuleUrl('ace/ext/elastic_tabstops_lite', require('file-loader!./src-noconflict/ext-elastic_tabstops_lite.js'))
 ace.config.setModuleUrl('ace/ext/emmet', require('file-loader!./src-noconflict/ext-emmet.js'))
