@@ -27,27 +27,25 @@ function countDownTimer(game){
   let displayCounter = setInterval(() => {
     $('h1#countDown').text(`Timer: ${game.starterScore}`);
     $('.score').html(`Score: ${game.score}`);
-  }, 10);
+  }, 1);
 }
-function returnScore(game){
-  $('.score').html(`Score: ${game.score}`);
-}
+
 //setTimeout(switchQuestion, 10) --hoping this will make the function run 10 time for each question. but that would just make the loop do it's 10 loops, 10 times.
 
 $(document).ready(function(){
-  let collectionArray = [];
-  let game = new Game(collectionArray);
+  let game = new Game();
+  let collectionArray = game.collectionArray;
   $('#game').show();
-  console.log(game);
   countDownTimer(game);
   game.copyCountDown();
-  returnScore(game);
+  // Collect on key press array.
   $(document).keyup(function (event) {
     collectionArray.push(event.keyCode);
     console.log(collectionArray);
   });
-});
 
+});
+// For nav bars -------
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
