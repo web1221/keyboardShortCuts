@@ -39,7 +39,8 @@ $(document).ready(function(){
   countDownTimer(game);
   game.copyCountDown();
   // Collect on key press array.
-  $(document).keyup(function (event) {
+  $(document).keydown(function (event) {
+    event.preventDefault();
     collectionArray.push(event.keyCode);
     console.log(collectionArray);
   });
