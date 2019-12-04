@@ -1,12 +1,11 @@
 export class Game{
   construtor(score){
-    //A construtor for game-play.  Could contain score, collection array.
     this.score = 0;
+    this.starterScore = 200;
     this.metaKeys = {
       ctrl: 17,
       option: 18,
-      commandRight: 93,
-      commandLeft: 91,
+      command: 93 || 91,
       shift: 16,
       comma: 188,
       tab: 9,
@@ -33,48 +32,14 @@ export class Game{
     } ;
     this.answerArray = [];
   }
-  commandKey(){
-    if(91 || 93){
-      return true;
+  doCopy(){
+    set interval
+    this.starterScore --
+    doneCopy()
+  }
+  doneCopy(){
+    if(this.metaKeys.command && this.metaKeys.c){
+      clear
     }
   }
-  keydownFunction(){
-    document.addEventListener("keydown", function(event){
-      if (event.repeat === false) {
-        this.collectionArray.push(event.which);
-      }
-    });
-  }
-  arrayToString(){
-    this.collectionArray.toString();
-    this.
-  }
-  resetArray(){
-
-  }
 }
-let answerArray = [93, 67];
-let collectionArray = [];
-
-document.addEventListener("keydown", function(event) {
-  // console.log(event.which);
-  // console.log(event.repeat);
-  if (event.repeat === false) {
-    collectionArray.push(event.which);
-    console.log(event.which);
-  }
-  let collectionArrayString = collectionArray.toString();
-  let answerArrayString = answerArray.toString();
-  // console.log(collectionArray);
-  // console.log(answerArrayString);
-  if (collectionArrayString === answerArrayString) {
-    console.log("success!");
-    collectionArray = [];
-  }
-  else if(collectionArray.length === answerArray.length){
-    console.log("nope!");
-    collectionArray = [];
-    // console.log(collectionArray);
-  }
-
-});
