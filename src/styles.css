@@ -31,7 +31,9 @@ textarea {
   position: absolute;
   display: grid;
 }
-
+#game{
+  display: none;
+}
 #editor {
 
     position: relative;
