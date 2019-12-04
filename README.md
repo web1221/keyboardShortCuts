@@ -1,6 +1,6 @@
 # Keyboard Shortcuts
 
-#### _Group project for JavaScript that tests users on their knowledge of keyboard shortcuts, also includes a shortcut directory, 15 Nov 2019_
+#### _Group project for JavaScript that tests users on their knowledge of keyboard shortcuts, also includes a shortcut directory, 5 Dec 2019_
 
 ## Created by Eva Wiedmann, Angela Weber, Dominique Youmans, & Bryon Burke
 
