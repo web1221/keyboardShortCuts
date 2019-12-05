@@ -63,9 +63,9 @@ function switchQuestions(game) {
 
 function showKeys(code) {
   let html = this.collectionArray.map(function() {
-      $('.keys').html(html.join(`<div class="key">${code}</div>`));
-    });
-  }
+    $('.keys').html(html.join(`<div class="key">${code}</div>`));
+  });
+}
 
 
 function countDownTimer(game) {
@@ -119,28 +119,28 @@ $("#moveCurrent").click(function(event) {
   $("#pointer").fadeIn();
   $("#shortcut1").fadeIn();
 
-})
+});
 
 $("#selectNext").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
   $("#shortcut2").fadeIn();
-})
+});
 
 $("#selectAll").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
   $("#shortcut3").fadeIn();
-})
+});
 
 $("#shakeSelect").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
   $("#shortcut4").fadeIn();
-})
+});
 // end atom buttons to pop up banner
 
 
@@ -155,7 +155,7 @@ $("#clearConsole").click(function(event) {
   $("#pointer").fadeIn();
   $("#shortcut5").fadeIn();
 
-})
+});
 
 $("#openInspector").click(function(event) {
   event.preventDefault();
@@ -163,14 +163,14 @@ $("#openInspector").click(function(event) {
   $("#pointer").fadeIn();
   $("#shortcut6").fadeIn();
 
-})
+});
 
 $("#newTab").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
   $("#shortcut7").fadeIn();
-})
+});
 
 $("#newWindow").click(function(event) {
   event.preventDefault();
@@ -178,7 +178,7 @@ $("#newWindow").click(function(event) {
   $("#pointer").fadeIn();
   $("#shortcut8").fadeIn();
 })
-
+;
 // end chrome buttons to pop up banner
 
 
@@ -192,7 +192,7 @@ $("#copy").click(function(event) {
   $("#pointer").fadeIn();
   $("#shortcut9").fadeIn();
 
-})
+});
 
 $("#paste").click(function(event) {
   event.preventDefault();
@@ -200,20 +200,20 @@ $("#paste").click(function(event) {
   $("#pointer").fadeIn();
   $("#shortcut10").fadeIn();
 
-})
+});
 
 $("#pasteWithout").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
   $("#shortcut11").fadeIn();
-})
+});
 
 $("#select").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
   $("#shortcut12").fadeIn();
-})
+});
 
 // end general buttons to pop up banner
