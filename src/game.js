@@ -1,3 +1,4 @@
+import {switchQuestions} from './main.js'
 export class Game {
   constructor() {
     this.score = 0;
@@ -17,12 +18,11 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      this.pasteCountDown();
+      // this.pasteCountDown();
     } else if (this.starterScore <= 1){
       clearInterval(interval);
-
       this.addPointsReset();
-      this.pasteCountDown();
+      // this.pasteCountDown();
     }
   }
   // Paste Command   Question 2 ----------
@@ -39,8 +39,7 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-
-      this.toggleCommentsCountDown();
+      // this.toggleCommentsCountDown();
     } else if (this.starterScore <= 1){
       clearInterval(interval);
       this.addPointsReset();
@@ -60,7 +59,7 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      this.cutCountDown();
+      // this.cutCountDown();
     } else if (this.starterScore <= 1){
       clearInterval(interval);
       this.addPointsReset();
@@ -79,7 +78,7 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      this.deleteLineCountDown();
+      // this.deleteLineCountDown();
     } else if (this.starterScore <= 1){
       clearInterval(interval);
       this.addPointsReset();
@@ -87,7 +86,7 @@ export class Game {
   }
   // Delete Line  Question 5---------
   deleteLineCountDown() {
-    console.log(this.collectionArray);
+    console.log('deleteLineCountDown');
     let deleteLineCountDownInterval = setInterval(() => {
       this.starterScore--;
       this.correctDeleteLineAnswer(deleteLineCountDownInterval);
@@ -99,16 +98,15 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      this.beginOfLineCountDown();
+      // this.beginOfLineCountDown();
     } else if (this.starterScore <= 1){
       clearInterval(interval);
-
       this.addPointsReset();
     }
   }
   // Go to beginning Of line Question 6 -------
   beginOfLineCountDown() {
-    console.log(this.collectionArray);
+    console.log('beginOfLineCountDown');
     let beginOfLineCountDownInterval = setInterval(() => {
       this.starterScore--;
       this.correctBeginOfLineAnswer(beginOfLineCountDownInterval);
@@ -120,7 +118,7 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      this.cutEndOfLineCountDown();
+      // this.cutEndOfLineCountDown();
     } else if (this.starterScore <= 1){
       clearInterval(interval);
       this.addPointsReset();
@@ -128,7 +126,7 @@ export class Game {
   }
   // Cut to the end of the line  Question 7 -------
   cutEndOfLineCountDown() {
-    console.log(this.collectionArray);
+    console.log('cutEndOfLineCountDown');
     let cutEndOfLineCountDownInterval = setInterval(() => {
       this.starterScore--;
       this.correctCutEndOfLineAnswer(cutEndOfLineCountDownInterval);
@@ -148,7 +146,7 @@ export class Game {
   }
   // Selete next matching Question 8 -------
   selectNextMatchCountDown() {
-    console.log(this.collectionArray);
+    console.log('selectNextMatchCountDown');
     let selectNextMatchCountDown = setInterval(() => {
       this.starterScore--;
       this.correctSelectNextMatchAnswer(selectNextMatchCountDown);
@@ -160,19 +158,19 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      this.saveCountDown();
+      // this.saveCountDown();
     } else if (this.starterScore <= 1){
       clearInterval(interval);
       this.addPointsReset();
 
     }
   }
-  // Save Question 9 ------
+  //Save Question 9 ------
   saveCountDown(){
-    console.log(this.collectionArray);
+    console.log("Save countdown");
     let saveCountDownInterval = setInterval(()=> {
       this.starterScore--;
-      this.correctCutAnswer(saveCountDownInterval);
+      this.correctSaveAnswer(saveCountDownInterval);
     }, 1000);
   }
   correctSaveAnswer(interval){
@@ -186,12 +184,12 @@ export class Game {
 
     }
   }
-  // Select All Question 10 ----
+  //Select All Question 10 ----
   selectAllCountDown(){
     console.log(this.collectionArray);
     let selectAllCountDownInterval = setInterval(()=> {
       this.starterScore--;
-      this.correctCutAnswer(selectAllCountDownInterval);
+      this.correctSelectAllAnswer(selectAllCountDownInterval);
     }, 1000);
   }
 
@@ -210,6 +208,7 @@ export class Game {
   addPointsReset() {
     this.score += this.starterScore;
     this.starterScore = 200;
+    switchQuestions(this);
   }
 
 }

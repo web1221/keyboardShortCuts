@@ -14,58 +14,53 @@ var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
 editor.session.setMode("ace/mode/javascript");
 
-function switchQuestions(game) {
+export function switchQuestions(game) {
   let goalPicker = (Math.floor(Math.random() * Math.floor(10))) + 1;
 // (Math.floor(Math.random() * Math.floor(10))) + 1;
   if (goalPicker === 1) {
-    let goal = "Copy";
+    // let goal = "Copy";
     game.copyCountDown();
-    $("#goalPlace").text(`Goal: ${goal}`);
+    $("#goalPlace").text(`Goal: Copy`);
   } else if (goalPicker === 2) {
-    let goal = "Paste";
+    // let goal = "Paste";
     game.pasteCountDown();
-    $("#goalPlace").text(`Goal: ${goal}`);
+    $("#goalPlace").text(`Goal: Paste`);
   } else if (goalPicker === 3) {
-    let goal = "Select all"
+    // let goal = "Select all"
     game.selectAllCountDown();
-    $("#goalPlace").text(`Goal: ${goal}`);
+    $("#goalPlace").text(`Goal: Select all`);
   } else if (goalPicker === 4) {
-    let goal = "Toggle Comments";
+    // let goal = "Toggle Comments";
     game.toggleCommentsCountDown();
-    $("#goalPlace").text(`Goal: ${goal}`);
+    $("#goalPlace").text(`Goal: Toggle Comments`);
   } else if (goalPicker === 5) {
-    let goal = "Cut"
+    // let goal = "Cut"
     game.cutCountDown();
-    $("#goalPlace").text(`Goal: ${goal}`);
+    $("#goalPlace").text(`Goal: Cut`);
   } else if (goalPicker === 6) {
-    let goal = "Delete Line";
+    // let goal = "Delete Line";
     game.deleteLineCountDown();
-    $("#goalPlace").text(`Goal: ${goal}`);
+    $("#goalPlace").text(`Goal: Delete Line`);
   } else if (goalPicker === 7) {
-    let goal = "Go to beginning of line"
+    // let goal = "Go to beginning of line"
     game.beginOfLineCountDown();
-    $("#goalPlace").text(`Goal: ${goal}`);
+    $("#goalPlace").text(`Goal: Go to beginning of line`);
   } else if (goalPicker === 8) {
-    let goal = "Cut to the end of line"
+    // let goal = "Cut to the end of line"
     game.cutEndOfLineCountDown();
-    $("#goalPlace").text(`Goal: ${goal}`);
+    $("#goalPlace").text(`Goal: Cut to the end of line`);
   } else if (goalPicker === 9) {
-    let goal = "Select next match";
-    $("#goalPlace").text(`Goal: ${goal}`);
+    // let goal = "Select next match";
+    $("#goalPlace").text(`Goal: Select next match`);
     game.selectNextMatchCountDown();
   } else if (goalPicker === 10) {
-    let goal = "Save";
-    $("#goalPlace").text(`Goal: ${goal}`);
+    // let goal = "Save";
+    $("#goalPlace").text(`Goal: Save`);
     game.saveCountDown();
   }
 
 }
 
-function showKeys(code) {
-  let html = this.collectionArray.map(function() {
-    $('.keys').html(html.join(`<div class="key">${code}</div>`));
-  });
-}
 
 
 function countDownTimer(game) {
@@ -75,7 +70,7 @@ function countDownTimer(game) {
   }, 1);
 }
 
-//setTimeout(switchQuestion, 10) --hoping this will make the function run 10 time for each question. but that would just make the loop do it's 10 loops, 10 times.
+// --hoping this will make the function run 10 time for each question. but that would just make the loop do it's 10 loops, 10 times.
 
 $(document).ready(function() {
   let game = new Game();
@@ -83,9 +78,9 @@ $(document).ready(function() {
   $('#game').show();
   countDownTimer(game);
   switchQuestions(game);
-  for(i = 1; i === 10; i++){
+  // setTimeout(switchQuestions(game),10);
 
-  }
+  // switchQuestions(game);
   // Collect on key press array.
   $(document).keydown(function(event) {
     event.preventDefault();
