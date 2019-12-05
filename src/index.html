@@ -14,10 +14,24 @@
     <!-- <div class="container"> -->
     <h1 class="pacifico sizing"><span class="blue">Dev</span><span class="yellow">Shortcuts</span></h1>
     <div class="rounded" id="editor">
-      <p>function foo(items) {
-        var x = "All this is syntax highlighted";
-        return x;
-        }</p>
+      <p>
+function AddressBook() {
+  this.contacts = [];
+}
+
+AddressBook.prototype.addContact = function(contact) {
+  this.contacts.push(contact);
+}
+
+function Contact(firstName, lastName, phoneNumber) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.phoneNumber = phoneNumber;
+}
+
+Contact.prototype.fullName = function() {
+  return this.firstName + " " + this.lastName;
+}</p>
     </div>
 
 
@@ -139,7 +153,7 @@
       </div>
       <!-- game start button and score-->
       <div class="cardStart rounded acme">
-        <button class="btn-lg" id="startGame">START</button>
+        <button class="btn-lg" id="startGame">Start Game</button>
       </div>
 
       <!-- game start button and score-->
@@ -233,11 +247,16 @@
   </div>
 
   <div id="game">
+    <div class="hideGame">
+    <h1 id='matchCommand'>Match the Command!</h1>
     <h1 id="countDown"></h1>
+    <h3><span id="goalPlace"></span></h3>
     <h2 class="score"></h2>
-    <div id="displayGoal">
-      <h3><span id="goalPlace"></span></h1>
-    </div>
+    <button type="button" id="endGame">End Game</button>
   </div>
-</body>
+    <div class="finalScore">
+      <h1 id='finalScoreDisplay'>Your Final score is </h1>
+    </div>
+  </body>
+    </div>
 </html>
