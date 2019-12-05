@@ -58,6 +58,11 @@ $("#displayGoal").show();
 
 }
 
+function showKeys(code) {
+  let html = this.collectionArray.map(function() {
+      $('.keys').html(html.join(`<div class="key">${code}</div>`));
+    });
+  }
 
 
 function countDownTimer(game){
@@ -206,3 +211,4 @@ $("#select").click(function(event){
 })
 
 // end general buttons to pop up banner
+
