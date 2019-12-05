@@ -67,8 +67,8 @@ $(document).ready(function() {
     collectionArray.push(event.keyCode);
   });
 });
-// For nav bars -------
 
+// For nav bars -------
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -84,76 +84,265 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
+// atom buttons that link to pop up banner
 function noShowPointer(){
   $(".noShow").hide();
   $("#pointer").fadeIn();
 }
+
 // atom buttons that link to pop up banner
-$("#moveCurrent").click(function() {
+$("#moveCurrent").click(function(){
   noShowPointer();
   $("#shortcut1").fadeIn();
-});
+})
 
-$("#selectNext").click(function() {
+$("#selectNext").click(function(){
   noShowPointer();
   $("#shortcut2").fadeIn();
-});
+})
 
-$("#selectAll").click(function() {
+$("#selectAll").click(function(){
   noShowPointer();
   $("#shortcut3").fadeIn();
-});
+})
 
-$("#shakeSelect").click(function() {
+$("#shakeSelect").click(function(){
   noShowPointer();
   $("#shortcut4").fadeIn();
+})
+$("#multiple").click(function(){
+  noShowPointer();
+  $("#shortcut5_").fadeIn();
+})
+$("#duplicate").click(function(){
+  noShowPointer();
+  $("#shortcut6_").fadeIn();
+})
+$("#markdown").click(function(){
+  noShowPointer();
+  $("#shortcut7_").fadeIn();
 });
+$("#toggle").click(function(){
+  noShowPointer();
+  $("#shortcut8_").fadeIn();
+});
+$("#deleteLine").click(function(){
+  noShowPointer();
+  $("#shortcut9_").fadeIn();
+});
+$("#cutTo").click(function(){
+  noShowPointer();
+  $("#shortcut10_").fadeIn();
+});
+$("#moveTo").click(function(){
+  noShowPointer();
+  $("#shortcut11_").fadeIn();
+});
+$("#moveToTop").click(function(){
+  noShowPointer();
+  $("#shortcut12_").fadeIn();
+});
+$("#moveBottom").click(function(){
+  noShowPointer();
+  $("#shortcut13_").fadeIn();
+});
+$("#firstChar").click(function(){
+  noShowPointer();
+  $("#shortcut14_").fadeIn();
+});
+$("#lastChar").click(function(){
+  noShowPointer();
+  $("#shortcut15_").fadeIn();
+});
+$("#selectLine").click(function(){
+  noShowPointer();
+  $("#shortcut16_").fadeIn();
+});
+$("#upperCon").click(function(){
+  noShowPointer();
+  $("#shortcut17_").fadeIn();
+});
+$("#lowerCon").click(function(){
+  noShowPointer();
+  $("#shortcut18_").fadeIn();
+});
+$("#cursorMov").click(function(){
+  noShowPointer();
+  $("#shortcut19_").fadeIn();
+});
+$("#findCurrent").click(function(){
+  noShowPointer();
+  $("#shortcut19_").fadeIn();
+});
+$("#findAll").click(function(){
+  noShowPointer();
+  $("#shortcut19_").fadeIn();
+});
+$("#inSizeFont").click(function(){
+  noShowPointer();
+  $("#shortcut19_").fadeIn();
+});
+$("#deSizeFont").click(function(){
+  noShowPointer();
+  $("#shortcut19_").fadeIn();
+});
+$("#selectWord").click(function(){
+  noShowPointer();
+  $("#shortcut19_").fadeIn();
+});
+$("#selectUp").click(function(){
+  noShowPointer();
+  $("#shortcut19_").fadeIn();
+});
+
+
 // end atom buttons to pop up banner
 
+
+
+
+
+
 // chrome buttons to pop up banner
-$("#clearConsole").click(function() {
+$("#clearConsole").click(function(){
   noShowPointer();
   $("#shortcut5").fadeIn();
-
 });
-
-$("#openInspector").click(function() {
+;
+$("#openInspector").click(function(){
   noShowPointer();
   $("#shortcut6").fadeIn();
-
 });
-
-$("#newTab").click(function() {
+;
+$("#newTab").click(function(){
   noShowPointer();
   $("#shortcut7").fadeIn();
 });
 
-$("#newWindow").click(function() {
+$("#newWindow").click(function(){
   noShowPointer();
   $("#shortcut8").fadeIn();
+});
+$("#newIncog").click(function(){
+  noShowPointer();
+  $("#shortcut_9").fadeIn();
+});
+$("#openClosed").click(function(){
+  noShowPointer();
+  $("#shortcut_10").fadeIn();
+});
+$("#bookmark").click(function(){
+  noShowPointer();
+  $("#shortcut_11").fadeIn();
+});
+$("#mini").click(function(){
+  noShowPointer();
+  $("#shortcut_12").fadeIn();
+});
+$("#refresh").click(function(){
+  noShowPointer();
+  $("#shortcut_13").fadeIn();
 });
 
 // end chrome buttons to pop up banner
 
 // general buttons to pop up banner
-$("#copy").click(function() {
+$("#copy").click(function(){
   noShowPointer();
   $("#shortcut9").fadeIn();
 });
 
-$("#paste").click(function() {
+$("#paste").click(function(){
   noShowPointer();
   $("#shortcut10").fadeIn();
 });
 
-$("#pasteWithout").click(function() {
+$("#pasteWithout").click(function(){
   noShowPointer();
   $("#shortcut11").fadeIn();
 });
 
-$("#select").click(function() {
+$("#select").click(function(){
   noShowPointer();
   $("#shortcut12").fadeIn();
 });
 
-// end general buttons to pop up banner
+$("#cut").click(function(){
+  noShowPointer();
+  $("#shortcut13").fadeIn();
+});
+
+$("#openSet").click(function(){
+  noShowPointer();
+  $("#shortcut14").fadeIn();
+});
+
+$("#indent").click(function(){
+  noShowPointer();
+  $("#shortcut15").fadeIn();
+});
+
+$("#deIndent").click(function(){
+  noShowPointer();
+  $("#shortcut16").fadeIn();
+});
+
+$("#zoomIn").click(function(){
+  noShowPointer();
+  $("#shortcut17").fadeIn();
+});
+
+$("#zoomOut").click(function(){
+  noShowPointer();
+  $("#shortcut18").fadeIn();
+});
+
+$("#find").click(function(){
+  noShowPointer();
+  $("#shortcut19").fadeIn();
+});
+
+$("#save").click(function(){
+  noShowPointer();
+  $("#shortcut20").fadeIn();
+});
+
+$("#saveAs").click(function(){
+  noShowPointer();
+  $("#shortcut22").fadeIn();
+});
+
+$("#open").click(function(){
+  noShowPointer();
+  $("#shortcut23").fadeIn();
+});
+
+$("#bold").click(function(){
+  noShowPointer();
+  $("#shortcut24").fadeIn();
+});
+
+$("#italics").click(function(){
+  noShowPointer();
+  $("#shortcut25").fadeIn();
+});
+$("#underline").click(function(){
+  noShowPointer();
+  $("#shortcut26").fadeIn();
+});
+$("#create").click(function(){
+  noShowPointer();
+  $("#shortcut27").fadeIn();
+});
+$("#quit").click(function(){
+  noShowPointer();
+  $("#shortcut28").fadeIn();
+});
+$("#forceQuit").click(function(){
+  noShowPointer();
+  $("#shortcut29").fadeIn();
+});
+$("#hide").click(function(){
+  noShowPointer();
+  $("#shortcut30").fadeIn();
+});
