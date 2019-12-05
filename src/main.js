@@ -35,21 +35,20 @@ function showKeys(code) {
     }, 1);
   }
 
-  //setTimeout(switchQuestion, 10) --hoping this will make the function run 10 time for each question. but that would just make the loop do it's 10 loops, 10 times.
+//setTimeout(switchQuestion, 10) --hoping this will make the function run 10 time for each question. but that would just make the loop do it's 10 loops, 10 times.
 
-  $(document).ready(function(){
-    let game = new Game();
-    let collectionArray = game.collectionArray;
-    $('#game').show();
-    countDownTimer(game);
-    game.copyCountDown();
-    // Collect on key press array.
-    $(document).keydown(function (event) {
-      collectionArray.push(event.keyCode);
-      event.preventDefault();
-      showKeys();
-      console.log(collectionArray);
-    });
+$(document).ready(function(){
+  let game = new Game();
+  let collectionArray = game.collectionArray;
+  $('#game').show();
+  countDownTimer(game);
+  game.copyCountDown();
+  // Collect on key press array.
+  $(document).keydown(function (event) {
+    event.preventDefault();
+    collectionArray.push(event.keyCode);
+    console.log(collectionArray);
+  });
 
   });
   // For nav bars -------
