@@ -94,30 +94,30 @@ function noShowPointer(){
 $("#moveCurrent").click(function(){
   noShowPointer();
   $("#shortcut1").fadeIn();
-})
+});
 
 $("#selectNext").click(function(){
   noShowPointer();
   $("#shortcut2").fadeIn();
-})
+});
 
 $("#selectAll").click(function(){
   noShowPointer();
   $("#shortcut3").fadeIn();
-})
+});
 
 $("#shakeSelect").click(function(){
   noShowPointer();
   $("#shortcut4").fadeIn();
-})
+});
 $("#multiple").click(function(){
   noShowPointer();
   $("#shortcut5_").fadeIn();
-})
+});
 $("#duplicate").click(function(){
   noShowPointer();
   $("#shortcut6_").fadeIn();
-})
+});
 $("#markdown").click(function(){
   noShowPointer();
   $("#shortcut7_").fadeIn();
@@ -195,25 +195,17 @@ $("#selectUp").click(function(){
   $("#shortcut19_").fadeIn();
 });
 
-
 // end atom buttons to pop up banner
-
-
-
-
-
 
 // chrome buttons to pop up banner
 $("#clearConsole").click(function(){
   noShowPointer();
   $("#shortcut5").fadeIn();
 });
-;
 $("#openInspector").click(function(){
   noShowPointer();
   $("#shortcut6").fadeIn();
 });
-;
 $("#newTab").click(function(){
   noShowPointer();
   $("#shortcut7").fadeIn();
