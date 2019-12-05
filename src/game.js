@@ -33,8 +33,8 @@ export class Game {
   correctPasteAnswer(interval){
     if((this.collectionArray.includes(91) || this.collectionArray.includes(93)) && this.collectionArray.includes(86)){
       this.collectionArray.length = 0;
-      clearInterval(interval)
-      this.addPoints()
+      clearInterval(interval);
+      this.addPoints();
       this.resetStarterScore();
       this.selectNextMatchCountDown();
     }
@@ -51,8 +51,8 @@ export class Game {
   correctSelectNextMatchAnswer(interval){
     if(this.collectionArray.includes(68) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
       this.collectionArray.length = 0;
-      clearInterval(interval)
-      this.addPoints()
+      clearInterval(interval);
+      this.addPoints();
       this.resetStarterScore();
       this.cutCountDown();
     }
@@ -67,8 +67,8 @@ export class Game {
   correctCutAnswer(interval){
     if(this.collectionArray.includes(88) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
       this.collectionArray.length = 0;
-      clearInterval(interval)
-      this.addPoints()
+      clearInterval(interval);
+      this.addPoints();
       this.resetStarterScore();
       this.saveCountDown();
     }
@@ -84,22 +84,23 @@ export class Game {
   correctSaveAnswer(interval){
     if(this.collectionArray.includes(83) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
       this.collectionArray.length = 0;
-      clearInterval(interval)
-      this.addPoints()
+      clearInterval(interval);
+      this.addPoints();
       this.resetStarterScore();
     }
   }
 
 
-  addPoints(){
-    this.score += this.starterScore;
+
+    addPoints(){
+      this.score += this.starterScore;
+    }
+
+    resetStarterScore(){
+      //reset the starter score
+      return this.starterScore = 200;
+    }
+
+
+
   }
-
-  resetStarterScore(){
-    //reset the starter score
-    return this.starterScore = 200;
-  }
-
-
-
-}
