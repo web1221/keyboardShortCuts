@@ -1,4 +1,3 @@
-
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,54 +6,58 @@ import './src-noconflict/ace.js';
 import './src-noconflict/theme-monokai.js';
 import './src-noconflict/mode-javascript.js';
 // import './src-noconflict/worker-javascript.js';
-import { Game } from './game.js';
+import {
+  Game
+} from './game.js';
 
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
 editor.session.setMode("ace/mode/javascript");
 
-function switchQuestions(game){
-  let goal;
-
-  let goalPicker = 1;
-
-  // (Math.floor(Math.random() * Math.floor(12))) + 1;
-
+function switchQuestions(game) {
+  let goalPicker = (Math.floor(Math.random() * Math.floor(10))) + 1;
+// (Math.floor(Math.random() * Math.floor(10))) + 1;
   if (goalPicker === 1) {
-    goal = "Copy";
+    let goal = "Copy";
     game.copyCountDown();
-  }else if (goalPicker === 2) {
-    goal = "Paste";
+    $("#goalPlace").text(`Goal: ${goal}`);
+  } else if (goalPicker === 2) {
+    let goal = "Paste";
     game.pasteCountDown();
-  }else if (goalPicker === 3) {
-    goal = "Select all"
+    $("#goalPlace").text(`Goal: ${goal}`);
+  } else if (goalPicker === 3) {
+    let goal = "Select all"
     game.selectAllCountDown();
-  }else if (goalPicker === 4) {
-    goal = "Toggle Comments";
+    $("#goalPlace").text(`Goal: ${goal}`);
+  } else if (goalPicker === 4) {
+    let goal = "Toggle Comments";
     game.toggleCommentsCountDown();
-  }else if (goalPicker === 5) {
-    goal = "Cut"
-
-
-  }else if (goalPicker === 6) {
-    goal = "Delete Line";
-  }else if (goalPicker === 7) {
-    goal = "Go to beginning of line"
-  }else if (goalPicker === 8) {
-    goal = "Go to beginning of line";
-  }else if (goalPicker === 9) {
-    goal = "Cut to the end of line"
-  }else if (goalPicker === 10) {
-    goal = "Select next match";
-  }else if (goalPicker === 11) {
-    goal = "Save";
-  }else if (goalPicker === 12) {
-    goal = "Select all";
+    $("#goalPlace").text(`Goal: ${goal}`);
+  } else if (goalPicker === 5) {
+    let goal = "Cut"
+    game.cutCountDown();
+    $("#goalPlace").text(`Goal: ${goal}`);
+  } else if (goalPicker === 6) {
+    let goal = "Delete Line";
+    game.deleteLineCountDown();
+    $("#goalPlace").text(`Goal: ${goal}`);
+  } else if (goalPicker === 7) {
+    let goal = "Go to beginning of line"
+    game.beginOfLineCountDown();
+    $("#goalPlace").text(`Goal: ${goal}`);
+  } else if (goalPicker === 8) {
+    let goal = "Cut to the end of line"
+    game.cutEndOfLineCountDown();
+    $("#goalPlace").text(`Goal: ${goal}`);
+  } else if (goalPicker === 9) {
+    let goal = "Select next match";
+    $("#goalPlace").text(`Goal: ${goal}`);
+    game.selectNextMatchCountDown();
+  } else if (goalPicker === 10) {
+    let goal = "Save";
+    $("#goalPlace").text(`Goal: ${goal}`);
+    game.saveCountDown();
   }
-
-
-$("#goalPlace").text(goal);
-$("#displayGoal").show();
 
 }
 
@@ -65,8 +68,8 @@ function showKeys(code) {
   }
 
 
-function countDownTimer(game){
-  let displayCounter = setInterval(() => {
+function countDownTimer(game) {
+  setInterval(() => {
     $('h1#countDown').text(`Timer: ${game.starterScore}`);
     $('.score').html(`Score: ${game.score}`);
   }, 1);
@@ -74,14 +77,17 @@ function countDownTimer(game){
 
 //setTimeout(switchQuestion, 10) --hoping this will make the function run 10 time for each question. but that would just make the loop do it's 10 loops, 10 times.
 
-$(document).ready(function(){
+$(document).ready(function() {
   let game = new Game();
   let collectionArray = game.collectionArray;
   $('#game').show();
   countDownTimer(game);
-  game.copyCountDown();
+  switchQuestions(game);
+  for(i = 1; i === 10; i++){
+
+  }
   // Collect on key press array.
-  $(document).keydown(function (event) {
+  $(document).keydown(function(event) {
     event.preventDefault();
     collectionArray.push(event.keyCode);
     console.log(collectionArray);
@@ -107,7 +113,7 @@ for (i = 0; i < coll.length; i++) {
 
 
 // atom buttons that link to pop up banner
-$("#moveCurrent").click(function(event){
+$("#moveCurrent").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
@@ -115,21 +121,21 @@ $("#moveCurrent").click(function(event){
 
 })
 
-$("#selectNext").click(function(event){
+$("#selectNext").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
   $("#shortcut2").fadeIn();
 })
 
-$("#selectAll").click(function(event){
+$("#selectAll").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
   $("#shortcut3").fadeIn();
 })
 
-$("#shakeSelect").click(function(event){
+$("#shakeSelect").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
@@ -143,7 +149,7 @@ $("#shakeSelect").click(function(event){
 
 
 // chrome buttons to pop up banner
-$("#clearConsole").click(function(event){
+$("#clearConsole").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
@@ -151,7 +157,7 @@ $("#clearConsole").click(function(event){
 
 })
 
-$("#openInspector").click(function(event){
+$("#openInspector").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
@@ -159,14 +165,14 @@ $("#openInspector").click(function(event){
 
 })
 
-$("#newTab").click(function(event){
+$("#newTab").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
   $("#shortcut7").fadeIn();
 })
 
-$("#newWindow").click(function(event){
+$("#newWindow").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
@@ -180,7 +186,7 @@ $("#newWindow").click(function(event){
 
 
 // general buttons to pop up banner
-$("#copy").click(function(event){
+$("#copy").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
@@ -188,7 +194,7 @@ $("#copy").click(function(event){
 
 })
 
-$("#paste").click(function(event){
+$("#paste").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
@@ -196,14 +202,14 @@ $("#paste").click(function(event){
 
 })
 
-$("#pasteWithout").click(function(event){
+$("#pasteWithout").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
   $("#shortcut11").fadeIn();
 })
 
-$("#select").click(function(event){
+$("#select").click(function(event) {
   event.preventDefault();
   $(".noShow").hide();
   $("#pointer").fadeIn();
@@ -211,4 +217,3 @@ $("#select").click(function(event){
 })
 
 // end general buttons to pop up banner
-
