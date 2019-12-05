@@ -1,4 +1,4 @@
-import {switchQuestions} from './main.js'
+import {switchQuestions} from './main.js';
 export class Game {
   constructor() {
     this.score = 0;
@@ -18,16 +18,14 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      // this.pasteCountDown();
-    } else if (this.starterScore <= 1){
+    } else if (this.starterScore <= 0){
+      this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      // this.pasteCountDown();
     }
   }
   // Paste Command   Question 2 ----------
   pasteCountDown() {
-    console.log(this.collectionArray);
     let pasteCountDownInterval = setInterval(() => {
       this.starterScore--;
       this.correctPasteAnswer(pasteCountDownInterval);
@@ -39,15 +37,14 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      // this.toggleCommentsCountDown();
-    } else if (this.starterScore <= 1){
+    } else if (this.starterScore <= 0){
+      this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
     }
   }
   // Toggle Comments   Question 3 ---------------
   toggleCommentsCountDown() {
-    console.log(this.collectionArray);
     let toggleCommentsCountDown = setInterval(() => {
       this.starterScore--;
       this.correctToggleCommentsAnswer(toggleCommentsCountDown);
@@ -59,15 +56,14 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      // this.cutCountDown();
-    } else if (this.starterScore <= 1){
+    } else if (this.starterScore <= 0){
+      this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
     }
   }
   // Cut   Question 4 --------------
   cutCountDown() {
-    console.log(this.collectionArray);
     let cutCountDownInterval = setInterval(() => {
       this.starterScore--;
       this.correctCutAnswer(cutCountDownInterval);
@@ -78,15 +74,14 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      // this.deleteLineCountDown();
-    } else if (this.starterScore <= 1){
+    } else if (this.starterScore <= 0){
+      this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
     }
   }
   // Delete Line  Question 5---------
   deleteLineCountDown() {
-    console.log('deleteLineCountDown');
     let deleteLineCountDownInterval = setInterval(() => {
       this.starterScore--;
       this.correctDeleteLineAnswer(deleteLineCountDownInterval);
@@ -98,15 +93,14 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      // this.beginOfLineCountDown();
-    } else if (this.starterScore <= 1){
+    } else if (this.starterScore <= 0){
+      this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
     }
   }
   // Go to beginning Of line Question 6 -------
   beginOfLineCountDown() {
-    console.log('beginOfLineCountDown');
     let beginOfLineCountDownInterval = setInterval(() => {
       this.starterScore--;
       this.correctBeginOfLineAnswer(beginOfLineCountDownInterval);
@@ -118,15 +112,14 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      // this.cutEndOfLineCountDown();
-    } else if (this.starterScore <= 1){
+    } else if (this.starterScore <= 0){
+      this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
     }
   }
   // Cut to the end of the line  Question 7 -------
   cutEndOfLineCountDown() {
-    console.log('cutEndOfLineCountDown');
     let cutEndOfLineCountDownInterval = setInterval(() => {
       this.starterScore--;
       this.correctCutEndOfLineAnswer(cutEndOfLineCountDownInterval);
@@ -138,7 +131,8 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-    } else if (this.starterScore <= 1){
+    } else if (this.starterScore <= 0){
+      this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
 
@@ -146,7 +140,6 @@ export class Game {
   }
   // Selete next matching Question 8 -------
   selectNextMatchCountDown() {
-    console.log('selectNextMatchCountDown');
     let selectNextMatchCountDown = setInterval(() => {
       this.starterScore--;
       this.correctSelectNextMatchAnswer(selectNextMatchCountDown);
@@ -158,8 +151,8 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-      // this.saveCountDown();
-    } else if (this.starterScore <= 1){
+    } else if (this.starterScore <= 0){
+      this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
 
@@ -167,7 +160,6 @@ export class Game {
   }
   //Save Question 9 ------
   saveCountDown(){
-    console.log("Save countdown");
     let saveCountDownInterval = setInterval(()=> {
       this.starterScore--;
       this.correctSaveAnswer(saveCountDownInterval);
@@ -178,7 +170,8 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-    } else if (this.starterScore <= 1){
+    } else if (this.starterScore <= 0){
+      this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
 
@@ -186,7 +179,6 @@ export class Game {
   }
   //Select All Question 10 ----
   selectAllCountDown(){
-    console.log(this.collectionArray);
     let selectAllCountDownInterval = setInterval(()=> {
       this.starterScore--;
       this.correctSelectAllAnswer(selectAllCountDownInterval);
@@ -198,7 +190,8 @@ export class Game {
       this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
-    } else if (this.starterScore <= 1){
+    } else if (this.starterScore <= 0){
+      this.collectionArray.length = 0;
       clearInterval(interval);
       this.addPointsReset();
 
