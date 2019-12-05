@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  font-family: 'Pacifico', cursive;
+
   text-align: left;
 }
 
@@ -16,13 +16,45 @@ textarea {
 
 }
 
+.pacifico {
+    font-family: 'Pacifico', cursive;
+
+}
+.hidden {
+  display: none;
+  background-color: white;
+  height: 500px;
+  width: 500px;
+}
+
+#shortcut1, #shortcut2, #shortcut3, #shortcut4, #shortcut5, #shortcut6, #shortcut7, #shortcut8, #shortcut9, #shortcut10, #shortcut11, #shortcut12 {
+  display: none;
+  font-family: 'Acme', sans-serif;
+  font-size: 18px;
+}
+
 .card {
+  background-color: dodgerblue;
+
+}
+
+
+.dropdown-menu {
   background-color: dodgerblue;
 }
 
+button {
+  background-color: dodgerblue;
+  border: -0;
+}
+
+.border {
+  border: black;
+  border: -2;
+}
 /* container with editor and entry */
 .all {
-  height: 1500px ;
+  height: 500px ;
   width: 1500px ;
   margin-left: 600px;
   margin: 100px;
@@ -43,24 +75,66 @@ textarea {
     margin-top: 10px;
 }
 
+/* container with shortcuts being pushed from bottom of page; shaped like a banner */
+
+#pointer {
+      display: none;
+      height: 40px;
+      width: 200px;
+      position: relative;
+      background: yellow;
+      margin-left: 120px;
+      text-align: center;
+    }
+    #pointer:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 20px solid black;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+    }
+    #pointer:before {
+      content: "";
+      position: absolute;
+      right: -20px;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 20px solid yellow;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+    }
+
+.noShow {
+  height: 60px;
+  width: 120px;
+}
+
+
+
+
 
 /* container with shortcuts */
 
 #talkbubble {
-      height: 500px;
-      width: 500px;
+      height: 100px;
+      width: 150px;
 
       background: dodgerblue;
       position: relative;
       -moz-border-radius: 10px;
       -webkit-border-radius: 10px;
       border-radius: 10px;
-      float: right;
-      margin-right: 500px;
+      float: left;
+      margin-left: 600px;
     }
     #talkbubble:before {
       content: "";
-      text-align: right;
+
       position: absolute;
       right: 100%;
       display: inline-grid;
@@ -70,33 +144,6 @@ textarea {
       border-top: 13px solid transparent;
       border-right: 26px solid dodgerblue;
       border-bottom: 13px solid transparent;
-    }
-
-    /* Style the button that is used to open and close the collapsible content */
-    .collapsible {
-      background-color: dodgerblue;
-      font-family: 'Pacifico', cursive;
-      color: white;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: center;
-      outline: none;
-      font-size: 20px;
-    }
-
-    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-    .active, .collapsible:hover {
-      background-color: dimgrey;
-    }
-
-    /* Style the collapsible content. Note: hidden by default */
-    .content {
-      padding: 0 18px;
-      display: none;
-      overflow: hidden;
-      background-color: black;
     }
 
 
