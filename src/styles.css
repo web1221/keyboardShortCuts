@@ -20,6 +20,14 @@ textarea {
     font-family: 'Pacifico', cursive;
 
 }
+
+
+.acme {
+    font-family: 'Acme', cursive;
+
+}
+
+
 .hidden {
   display: none;
   background-color: white;
@@ -38,6 +46,10 @@ textarea {
 
 }
 
+.size {
+  font-size: 29px;
+  margin: 10px;
+}
 
 .dropdown-menu {
   background-color: dodgerblue;
@@ -54,18 +66,28 @@ button {
 }
 /* container with editor and entry */
 .all {
-  height: 500px ;
+  height: 1000px ;
   width: 1500px ;
-  margin-left: 600px;
-  margin: 100px;
+  margin-left: 100px;
+  margin-right: 200px;
+  float: right;
+
 }
 .container {
   position: absolute;
   display: grid;
 }
-#game{
+
+#game {
   display: none;
+  color: white;
+  margin-top: 500px ;
+  margin-left: 1100px;
+
+
 }
+
+
 #editor {
 
     position: relative;
@@ -83,6 +105,7 @@ button {
       width: 200px;
       position: relative;
       background: yellow;
+      margin-top: 610px;
       margin-left: 120px;
       text-align: center;
     }
@@ -130,7 +153,8 @@ button {
       -webkit-border-radius: 10px;
       border-radius: 10px;
       float: left;
-      margin-left: 600px;
+      margin-left: 100px;
+      margin-bottom: 200px;
     }
     #talkbubble:before {
       content: "";
@@ -146,13 +170,26 @@ button {
       border-bottom: 13px solid transparent;
     }
 
+.cardStart {
+  margin-right: 100px;
+  margin-left: 25px;
+}
+.btn-lg {
+    background-color: yellow;
+}
 
-
+.sizing {
+  margin-bottom: 100px;
+}
 /* span for color changes in title */
  .yellow {
    color: yellow;
+   font-size: 160px;
+
  }
 
-.red {
+.blue {
   color: dodgerblue;
+   font-size: 130px;
+
 }
