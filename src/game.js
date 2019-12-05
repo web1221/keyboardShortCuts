@@ -42,7 +42,6 @@ export class Game {
     } else if (this.starterScore <= 1){
       clearInterval(interval)
       this.addPointsReset();
-
     }
   }
   // Toggle Comments   Question 3 ---------------
@@ -82,7 +81,6 @@ export class Game {
     } else if (this.starterScore <= 1){
       clearInterval(interval)
       this.addPointsReset();
-
     }
   }
   // Delete Line  Question 5---------
@@ -103,7 +101,6 @@ export class Game {
     } else if (this.starterScore <= 1){
       clearInterval(interval)
       this.addPointsReset();
-
     }
   }
   // Go to beginning Of line Question 6 -------
@@ -124,7 +121,6 @@ export class Game {
     } else if (this.starterScore <= 1){
       clearInterval(interval)
       this.addPointsReset();
-
     }
   }
   // Cut to the end of the line  Question 7 -------
@@ -214,4 +210,4 @@ correctSelectAllAnswer(interval){
     this.starterScore = 200;
   }
 
-}
+  }

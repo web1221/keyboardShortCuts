@@ -22,13 +22,18 @@ function switchQuestions(game){
   }
 }
 
+function showKeys(code) {
+  let html = this.collectionArray.map(function() {
+      $('.keys').html(html.join(`<div class="key">${code}</div>`));
+    });
+  }
 
-function countDownTimer(game){
-  let displayCounter = setInterval(() => {
-    $('h1#countDown').text(`Timer: ${game.starterScore}`);
-    $('.score').html(`Score: ${game.score}`);
-  }, 1);
-}
+  function countDownTimer(game){
+    let displayCounter = setInterval(() => {
+      $('h1#countDown').text(`Timer: ${game.starterScore}`);
+      $('.score').html(`Score: ${game.score}`);
+    }, 1);
+  }
 
 //setTimeout(switchQuestion, 10) --hoping this will make the function run 10 time for each question. but that would just make the loop do it's 10 loops, 10 times.
 
@@ -45,19 +50,19 @@ $(document).ready(function(){
     console.log(collectionArray);
   });
 
-});
-// For nav bars -------
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
   });
-}
+  // For nav bars -------
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
