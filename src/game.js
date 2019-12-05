@@ -19,7 +19,7 @@ export class Game {
       this.addPointsReset();
       this.pasteCountDown();
     } else if (this.starterScore <= 1){
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
       this.pasteCountDown();
     }
@@ -36,11 +36,11 @@ export class Game {
   correctPasteAnswer(interval){
     if((this.collectionArray.includes(91) || this.collectionArray.includes(93)) && this.collectionArray.includes(86)){
       this.collectionArray.length = 0;
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
       this.toggleCommentsCountDown();
     } else if (this.starterScore <= 1){
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
     }
   }
@@ -56,11 +56,11 @@ export class Game {
   correctToggleCommentsAnswer(interval){
     if(this.collectionArray.includes(191) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
       this.collectionArray.length = 0;
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
       this.cutCountDown();
     } else if (this.starterScore <= 1){
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
     }
   }
@@ -75,11 +75,11 @@ export class Game {
   correctCutAnswer(interval){
     if(this.collectionArray.includes(88) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
       this.collectionArray.length = 0;
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
       this.deleteLineCountDown();
     } else if (this.starterScore <= 1){
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
     }
   }
@@ -95,11 +95,11 @@ export class Game {
   correctDeleteLineAnswer(interval){
     if(this.collectionArray.includes(17) && this.collectionArray.includes(16) && this.collectionArray.includes(75)){
       this.collectionArray.length = 0;
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
       this.beginOfLineCountDown();
     } else if (this.starterScore <= 1){
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
     }
   }
@@ -115,11 +115,11 @@ export class Game {
   correctBeginOfLineAnswer(interval){
     if(this.collectionArray.includes(17) && this.collectionArray.includes(65)){
       this.collectionArray.length = 0;
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
       this.cutEndOfLineCountDown();
     } else if (this.starterScore <= 1){
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
     }
   }
@@ -135,10 +135,10 @@ export class Game {
   correctCutEndOfLineAnswer(interval){
     if(this.collectionArray.includes(17) && this.collectionArray.includes(75)){
       this.collectionArray.length = 0;
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
     } else if (this.starterScore <= 1){
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
 
     }
@@ -155,59 +155,59 @@ export class Game {
   correctSelectNextMatchAnswer(interval){
     if(this.collectionArray.includes(68) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
       this.collectionArray.length = 0;
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
       this.saveCountDown();
     } else if (this.starterScore <= 1){
-      clearInterval(interval)
+      clearInterval(interval);
       this.addPointsReset();
 
     }
   }
   // Save Question 9 ------
   saveCountDown(){
-  console.log(this.collectionArray);
-  let saveCountDownInterval = setInterval(()=> {
-    this.starterScore--;
-    this.correctCutAnswer(saveCountDownInterval);
-  }, 1000);
-}
-
-correctSaveAnswer(interval){
-  if(this.collectionArray.includes(83) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
-    this.collectionArray.length = 0;
-    clearInterval(interval)
-    this.addPointsReset()
-  } else if (this.starterScore <= 1){
-    clearInterval(interval);
-    this.addPointsReset()
-
+    console.log(this.collectionArray);
+    let saveCountDownInterval = setInterval(()=> {
+      this.starterScore--;
+      this.correctCutAnswer(saveCountDownInterval);
+    }, 1000);
   }
-}
+
+  correctSaveAnswer(interval){
+    if(this.collectionArray.includes(83) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
+      this.collectionArray.length = 0;
+      clearInterval(interval);
+      this.addPointsReset();
+    } else if (this.starterScore <= 1){
+      clearInterval(interval);
+      this.addPointsReset();
+
+    }
+  }
   // Select All Question 10 ----
   selectAllCountDown(){
-  console.log(this.collectionArray);
-  let selectAllCountDownInterval = setInterval(()=> {
-    this.starterScore--;
-    this.correctCutAnswer(selectAllCountDownInterval);
-  }, 1000);
-}
-
-correctSelectAllAnswer(interval){
-  if(this.collectionArray.includes(65) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
-    this.collectionArray.length = 0;
-    clearInterval(interval)
-    this.addPointsReset()
-  } else if (this.starterScore <= 1){
-    clearInterval(interval)
-    this.addPointsReset(
-
+    console.log(this.collectionArray);
+    let selectAllCountDownInterval = setInterval(()=> {
+      this.starterScore--;
+      this.correctCutAnswer(selectAllCountDownInterval);
+    }, 1000);
   }
-}
+
+  correctSelectAllAnswer(interval){
+    if(this.collectionArray.includes(65) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
+      this.collectionArray.length = 0;
+      clearInterval(interval);
+      this.addPointsReset();
+    } else if (this.starterScore <= 1){
+      clearInterval(interval);
+      this.addPointsReset();
+
+    }
+  }
 
   addPointsReset(){
     this.score += this.starterScore;
     this.starterScore = 200;
   }
 
-  }
+}
