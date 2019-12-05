@@ -21,6 +21,9 @@ textarea {
 
 }
 
+#matchCommand{
+  text-decoration: underline;
+}
 
 .acme {
     font-family: 'Acme', cursive;
@@ -45,7 +48,9 @@ textarea {
   background-color: dodgerblue;
 
 }
-
+.finalScore{
+  display: none;
+}
 .size {
   font-size: 29px;
   margin: 10px;
@@ -79,7 +84,7 @@ button {
 }
 
 #game {
-  display: none;
+  /* display: none; */
   color: white;
   margin-top: 500px ;
   margin-left: 1100px;
@@ -87,7 +92,9 @@ button {
 
 }
 
-
+.hideGame{
+  display: none;
+}
 #editor {
 
     position: relative;
