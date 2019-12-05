@@ -57,8 +57,10 @@ function countDownTimer(game) {
 
 $(document).ready(function() {
   let game = new Game();
+  $("#startGame").click(function(){
   let collectionArray = game.collectionArray;
-  $('#game').show();
+  $('.hideGame').show();
+  $('#startGame').hide();
   countDownTimer(game);
   switchQuestions(game);
   // Collect on key press array.
@@ -66,6 +68,13 @@ $(document).ready(function() {
     event.preventDefault();
     collectionArray.push(event.keyCode);
   });
+});
+$('#endGame').click(function(){
+  $('.hideGame').hide();
+  $('.finalScore').show();
+  $('#startGame').show();
+  $('#finalScoreDisplay').text(`Your final score is ${game.score}`);
+});
 });
 
 // For nav bars -------
@@ -91,6 +100,8 @@ function noShowPointer(){
 }
 
 // atom buttons that link to pop up banner
+
+
 $("#moveCurrent").click(function(){
   noShowPointer();
   $("#shortcut1").fadeIn();
