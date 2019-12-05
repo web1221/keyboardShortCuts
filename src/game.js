@@ -16,16 +16,17 @@ export class Game {
     if((this.collectionArray.includes(91) || this.collectionArray.includes(93)) && this.collectionArray.includes(67)){
       this.collectionArray.length = 0;
       clearInterval(interval);
-      this.addPoints();
-      this.resetStarterScore();
+      this.addPointsReset();
+      this.pasteCountDown();
+    } else if (this.starterScore <= 1){
+      clearInterval(interval)
+      this.addPointsReset();
       this.pasteCountDown();
     }
   }
   // Paste Command   Question 2 ----------
   pasteCountDown(){
     console.log(this.collectionArray);
-    // const copy = "Copy";
-    // document.getElementsByIdName("1") = copy;
     let pasteCountDownInterval = setInterval(()=> {
       this.starterScore--;
       this.correctPasteAnswer(pasteCountDownInterval);
@@ -36,9 +37,12 @@ export class Game {
     if((this.collectionArray.includes(91) || this.collectionArray.includes(93)) && this.collectionArray.includes(86)){
       this.collectionArray.length = 0;
       clearInterval(interval)
-      this.addPoints()
-      this.resetStarterScore();
+      this.addPointsReset();
       this.toggleCommentsCountDown();
+    } else if (this.starterScore <= 1){
+      clearInterval(interval)
+      this.addPointsReset();
+
     }
   }
   // Toggle Comments   Question 3 ---------------
@@ -54,9 +58,11 @@ export class Game {
     if(this.collectionArray.includes(191) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
       this.collectionArray.length = 0;
       clearInterval(interval)
-      this.addPoints()
-      this.resetStarterScore();
+      this.addPointsReset();
       this.cutCountDown();
+    } else if (this.starterScore <= 1){
+      clearInterval(interval)
+      this.addPointsReset();
     }
   }
   // Cut   Question 4 --------------
@@ -71,9 +77,12 @@ export class Game {
     if(this.collectionArray.includes(88) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
       this.collectionArray.length = 0;
       clearInterval(interval)
-      this.addPoints()
-      this.resetStarterScore();
+      this.addPointsReset();
       this.deleteLineCountDown();
+    } else if (this.starterScore <= 1){
+      clearInterval(interval)
+      this.addPointsReset();
+
     }
   }
   // Delete Line  Question 5---------
@@ -89,9 +98,12 @@ export class Game {
     if(this.collectionArray.includes(17) && this.collectionArray.includes(16) && this.collectionArray.includes(75)){
       this.collectionArray.length = 0;
       clearInterval(interval)
-      this.addPoints()
-      this.resetStarterScore();
+      this.addPointsReset();
       this.beginOfLineCountDown();
+    } else if (this.starterScore <= 1){
+      clearInterval(interval)
+      this.addPointsReset();
+
     }
   }
   // Go to beginning Of line Question 6 -------
@@ -107,9 +119,12 @@ export class Game {
     if(this.collectionArray.includes(17) && this.collectionArray.includes(65)){
       this.collectionArray.length = 0;
       clearInterval(interval)
-      this.addPoints()
-      this.resetStarterScore();
+      this.addPointsReset();
       this.cutEndOfLineCountDown();
+    } else if (this.starterScore <= 1){
+      clearInterval(interval)
+      this.addPointsReset();
+
     }
   }
   // Cut to the end of the line  Question 7 -------
@@ -125,8 +140,11 @@ export class Game {
     if(this.collectionArray.includes(17) && this.collectionArray.includes(75)){
       this.collectionArray.length = 0;
       clearInterval(interval)
-      this.addPoints()
-      this.resetStarterScore();
+      this.addPointsReset();
+    } else if (this.starterScore <= 1){
+      clearInterval(interval)
+      this.addPointsReset();
+
     }
   }
   // Selete next matching Question 8 -------
@@ -142,9 +160,12 @@ export class Game {
     if(this.collectionArray.includes(68) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
       this.collectionArray.length = 0;
       clearInterval(interval)
-      this.addPoints()
-      this.resetStarterScore();
+      this.addPointsReset();
       this.saveCountDown();
+    } else if (this.starterScore <= 1){
+      clearInterval(interval)
+      this.addPointsReset();
+
     }
   }
   // Save Question 9 ------
@@ -160,8 +181,11 @@ correctSaveAnswer(interval){
   if(this.collectionArray.includes(83) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
     this.collectionArray.length = 0;
     clearInterval(interval)
-    this.addPoints()
-    this.resetStarterScore();
+    this.addPointsReset()
+  } else if (this.starterScore <= 1){
+    clearInterval(interval);
+    this.addPointsReset()
+
   }
 }
   // Select All Question 10 ----
@@ -177,19 +201,17 @@ correctSelectAllAnswer(interval){
   if(this.collectionArray.includes(65) && (this.collectionArray.includes(93) || this.collectionArray.includes(91))){
     this.collectionArray.length = 0;
     clearInterval(interval)
-    this.addPoints()
-    this.resetStarterScore();
+    this.addPointsReset()
+  } else if (this.starterScore <= 1){
+    clearInterval(interval)
+    this.addPointsReset(
+
   }
 }
-  addPoints(){
+
+  addPointsReset(){
     this.score += this.starterScore;
+    this.starterScore = 200;
   }
-
-  resetStarterScore(){
-    //reset the starter score
-    return this.starterScore = 200;
-  }
-
-
 
 }
